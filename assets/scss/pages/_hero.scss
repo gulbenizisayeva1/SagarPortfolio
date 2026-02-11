@@ -1,0 +1,100 @@
+@use "../variables" as *;
+@import "../mixins";
+
+.hero{
+    width: 100%;
+    background-color: $sectionBg;
+    .container{
+      .row{
+        align-items: center;
+            .leftSide{
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+               gap: 48px;
+   .titleBox{
+             .title{
+    font-size: 60px;
+    font-weight: 700;
+    color: $headingColor;
+    line-height: 72px;
+    margin-bottom: 8px;
+}
+.info{
+    color: $textColor;
+    line-height: 24px;
+}
+   }
+   .additionalInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .additionalInfoItem{
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        img{
+            width: 24px;
+            height: 24px;
+        }
+        span{
+            color: $textColor;
+        }
+    }
+   }
+   .socialList{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    .listItem{
+        display: flex;
+        width: 36px;
+        height: 36px;
+        justify-content: center;
+        align-items: center;
+        @include icon()
+    }
+   }
+            }
+            .rightSide{
+                width: 40%;
+            .avatar{
+                 justify-self: center;
+                width: 100%;
+                width: 280px;
+                height: 320px;
+                box-shadow: 34px 34px 0 $imageshadowColor;
+
+                       }
+            }
+        }
+    }
+}
+
+
+@media (max-width:768px){
+    .hero{
+        .container{
+            .row{
+                flex-direction: column-reverse;
+                gap: 48px;
+                .leftSide,.rightSide{
+                    width: 100%;
+                }
+                .leftSide{
+                    .titleBox{
+                        .title{
+                            font-size: 36px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .rightSide{
+                    .avatar{
+                         box-shadow: -18px 18px 0 $imageshadowColor,18px 18px 0 $imageshadowColor;
+                    }
+                }
+            }
+        }
+    }
+}

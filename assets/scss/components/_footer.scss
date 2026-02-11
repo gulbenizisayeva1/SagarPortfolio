@@ -1,0 +1,100 @@
+@use "../variables" as *;
+@import "../mixins";
+
+
+.footer{
+    background-color: $sectionBg;
+    width: 100%;
+    
+    .container{
+        .row{
+            .footerbadge{
+                @include badge();
+                 width: fit-content;
+                
+                
+            }
+            p{
+                color: $textColor;
+            }
+            .question{
+                margin-bottom: 32px;
+                max-width: 576px;
+                text-align: center;
+            }
+            div{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                a{
+                    white-space: nowrap;
+                    font-size: 36px;
+                    font-weight: 600;
+                    line-height: 40px;
+                    color: $headingColor;
+                }
+            }
+            .last{
+                margin-bottom: 32px;
+            }
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            .socialList{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    .listItem{
+        display: flex;
+        width: 36px;
+        height: 36px;
+        justify-content: center;
+        align-items: center;
+        @include icon()
+    }
+   }
+        }
+      
+    }
+
+    .copyright{
+            padding: 24px 0;
+            background-color: $mainBg;
+            text-align: center;
+            
+        }
+      
+}
+
+
+
+@media(max-width:768px){
+    .footer{
+    .container{
+        .row{
+            .question{
+                margin-bottom: 8px;
+                
+                
+            }
+            div{
+                gap: 16px;
+                a{
+                   font-size: 18px;
+                   
+                }
+            }
+            .last{
+                margin-bottom: 8px;
+            }
+          
+            
+        }
+      
+    }
+
+    
+      
+}
+
+}

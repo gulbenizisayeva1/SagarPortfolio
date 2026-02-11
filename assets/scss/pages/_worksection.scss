@@ -1,0 +1,145 @@
+@use "../variables" as *;
+@import "../mixins";
+
+
+.section5{
+    background-color: $sectionBg;
+    border-bottom: 1px solid $secondBg;
+    .container{
+    .row{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+             align-items: center;
+             gap: 48px;
+            .sectionBadge5{
+            @include badge();
+            display: flex;
+            justify-content: center;
+            }
+            .sectionInfo5{
+            color: $textColor;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 28px;
+            }
+            .card{
+               display: flex;
+               width: 1152px;
+               border-radius: 12px;
+                
+                .leftside{
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: 480px;
+                        height: 384px;
+                        border-radius: 12px;
+                    }
+                background-color: $leftsideBgColor;
+                padding: 48px;
+                width: 50%;
+                }
+                .rightside{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 24px;
+                    background-color: $rightsideBgColor;
+                    padding: 48px;
+                    width: 50%;
+                    .fisTitle{
+                    color: $fisTitleColor;
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 28px;
+                    }
+                    .fisInfo{
+                    color: $fisInfoColor;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    }
+                    .badgeGroup{
+                        display: grid;
+                        gap:8px  ;
+                        grid-template-columns:repeat(4,max-content) ;
+                        .badgeItem{
+                          @include badge();
+
+                        }
+                    }
+                    .arrow{
+                    width: 36px;
+                    height: 36px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media(max-width:768px){
+   .section5{
+    .container{
+    .row{
+       .card .leftside,
+      .card .rightside{
+        width: 100%;  //override etdik hansi ki, desktopda cardlara  yazdigimiz 50% mobilde qalirdi onu duzeldib 100% etdik. 
+      }
+      .card{
+               display: flex;
+               flex-direction: column;
+               width: 100%;
+               border-radius: 12px;
+                .leftside{
+                    padding: 32px;
+                    display: flex;
+                    align-items: center;
+                    img{
+                        display: flex;
+                        align-self: center;
+                        justify-self: center;
+                        width: 279px;
+                        height: 192px;
+                        border-radius: 12px;
+                    }
+                }
+                .rightside{
+                   
+                    display: flex;
+                    flex-direction: column;
+                    gap: 24px;
+                    background-color: $rightsideBgColor;
+                    padding: 48px;
+                   
+                    .fisTitle{
+                    color: $fisTitleColor;
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 28px;
+                    }
+                    .fisInfo{
+                    color: $fisInfoColor;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    }
+                    .badgeGroup{
+                        width: 119px;
+                        
+                        display: grid;
+                        gap:8px  ;
+                        grid-template-columns:repeat(2,max-content) ;
+                        .badgeItem{
+                          @include badge();
+                         }
+                    }
+                   
+                }
+            }
+        }
+    }
+} 
+}

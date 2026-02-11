@@ -1,0 +1,15 @@
+
+//*Globals
+@use "./base";
+
+//*Components
+@use "./components/header";
+@use "./components/footer";
+
+//*Pages
+
+@use "./pages/hero";
+@use "./pages/about";
+@use "./pages/skills";
+@use "./pages/experience";
+@use "./pages/worksection";

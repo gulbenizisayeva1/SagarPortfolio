@@ -1,0 +1,221 @@
+
+@use "../variables" as *;
+@import "../mixins";
+
+
+
+
+.header {
+  width: 100%;
+  background-color: $sectionBg;
+  position: relative;
+
+  .container {
+    max-width: 1200px; 
+    margin: 0 auto;
+
+    .row {
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .logo {
+        a {
+          color: $headingColor;
+          font-size: 30px;
+          font-weight: 700;
+          line-height: 36px;
+        }
+      }
+
+      .menu,
+      .closeIcon {
+        display: none;
+      }
+
+      .userArea {
+        display: flex;
+        align-items: center;
+        
+
+        .navBar {
+           
+          .navList {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            font-weight: 500;
+
+            .navItem {
+              a {
+                padding: 6px 0;
+              }
+            }
+          }
+        }
+
+        .seperator {
+          display: inline-block;
+          background-color: $secondBg;
+          width: 2px;
+          height: 24px;
+          margin: 0 24px;
+        }
+
+        .btnGroup {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+
+          .theme {
+            display: flex;
+            align-items: center;
+
+            .themeTitle {
+              display: none;
+            }
+
+            .moonIcon {
+              @include icon();
+            }
+          }
+
+          a {
+            @include linkBtn();
+          }
+        }
+      }
+    }
+  }
+}
+
+//Responsive//
+
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+
+    .container {
+      .row {
+        padding: 16px  ;
+        overflow: hidden;
+
+      
+
+        .menu {
+          display: block;
+        }
+
+        #menu {
+          &:checked ~ .userArea {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+          }
+          &:checked ~ .menu{
+            display: none;
+          
+          }
+          &:checked ~ .closeIcon{
+            display: block;
+          }
+        }
+
+        .userArea {
+          width: 100%;
+          position: absolute;
+          top: 100%;
+          left: 0;
+
+          background-color: $sectionBg;
+          padding: 16px;
+          height: 100vh;
+        //   min-height: calc(100vh - 70px);
+
+          opacity: 0;
+          visibility: hidden;
+          transform: translateX(10px);
+          transition: 0.3s ease;
+
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 24px;
+
+          .navBar {
+            width: 100%;
+             border-top: 1px solid $borderColor;
+            border-bottom: 1px solid $borderColor;
+            padding: 16px 0 ;
+
+            .navList {
+              flex-direction: column; 
+              align-items: flex-start;
+              gap: 16px;
+            }
+          }
+
+          .seperator {
+            display: none;
+          }
+
+          .btnGroup {
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+
+            .theme {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+
+              .themeTitle {
+                display: block;
+              }
+
+              .moonIcon {
+                @include icon();
+              }
+            }
+
+            a {
+              width: 100%;
+              @include linkBtn();
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+@use "./variables" as * ;
+
+@mixin icon(){
+    width: 36px;
+    height: 36px;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    transition: .3s ease;
+    cursor: pointer;
+    &:hover{
+background-color: $secondBg;
+    }
+    &:active{
+background-color: $iconActiveColor;
+    }
+}
+
+
+@mixin linkBtn(){
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: .3s ease;
+    background-color: $headingColor;
+    border-radius: 12px;
+    padding: 6px 16px;
+    color: $btnText;
+    &:hover{
+background-color: $btnHover;
+    }
+    &:active{
+background-color: $btnActive;
+    }
+}
+
+
+@mixin badge(){
+    // width: 100%;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: $badgeColor;
+    color: $badgeFontColor;
+    border-radius: 12px;
+    padding: 4px 20px;
+    width: 105px;
+    height: 28px;
+   display: flex;
+   width: fit-content;
+   align-items: center;
+   line-height: 20px;
+}

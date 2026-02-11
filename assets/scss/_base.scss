@@ -1,0 +1,50 @@
+@use "../scss/variables" as *;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+}
+
+body{
+    background-color: $mainBg;
+}
+
+a{
+    color: $linkColor;
+    font-weight: 500;
+}
+
+p{
+    color: $textColor;
+    font-weight: 400;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.container{
+    width: 89%;
+    margin: 0 auto;
+}
+.row{
+    width: 100%;
+    display: flex;
+    padding: 96px 32px;
+}
+
+@media (max-width: 768px){
+    .container{
+    width: 100%;
+    
+}
+    .row{
+   padding: 64px 16px;
+}
+}

@@ -1,0 +1,109 @@
+@use "../variables" as *;
+@import "../mixins";
+
+.about{
+    width: 100%;
+    .container{
+        .row{
+            gap: 48px;
+            flex-direction: column;
+           
+            .sectionTitleBadge{
+               align-self: center;
+                @include badge();
+                 width: fit-content;
+                
+            }
+            .content{
+                display: flex;
+                .leftside,.rightside{
+                    width: 50%;
+                }
+                .leftside{
+                    .avatar{
+                justify-self: center;
+                width: 400px;
+                height: 480px;
+               box-shadow: -34px 34px 0 $imageshadowColor;
+                    }
+                }
+                .rightside{
+                   gap: 16px;
+                    p{
+                        white-space: pre-line;
+                        color: $textColor;
+                       }
+                      
+                    
+                    .special{
+                        color: $textColor;
+                    }
+                    h2{
+                        font-size: 30px;
+                        color: $headingColor;
+                        font-weight: 600;
+                    }
+
+                   
+                    
+                    
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@media (max-width:768px){
+    .about{
+  .container{
+        .row{
+            gap: 24px;
+          .content{
+            gap: 48px;
+            flex-direction: column;
+                display: flex;
+                .leftside,.rightside{
+                    width: 100%;
+                }
+                .leftside{
+                    .avatar{
+                justify-self: center;
+                width: 320px;
+                height: 360px;
+               box-shadow: -18px 18px 0 $imageshadowColor,18px 18px 0 $imageshadowColor;
+                    }
+                }
+                .rightside{
+                   gap: 16px;
+                    p{
+                        white-space: pre-line;
+                        color: $textColor;
+                       }
+                      h2{
+                        font-size: 24px;
+                        
+                    }
+
+                   
+                    
+                    
+                }
+            }
+        }
+    }
+}
+
+}
+
+
+
+
+
+
+
+
+//* List-style-disk: li qarsisina yumru noqte qoyur
+//* list-style-position:inside li nin pozisiyasini duzeldir
